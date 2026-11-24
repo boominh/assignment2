@@ -56,6 +56,10 @@ public abstract class Car implements Movable {
         color = clr;
     }
 
+    public Point2D.Double getPosition(){
+        return new Point2D.Double(currentPosition.x, currentPosition.y);
+    }
+
     public void startEngine() {
         currentSpeed = 0.1;
     }
