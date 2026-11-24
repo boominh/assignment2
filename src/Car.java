@@ -60,6 +60,11 @@ public abstract class Car implements Movable {
         return new Point2D.Double(currentPosition.x, currentPosition.y);
     }
 
+    // quick fix to be able to set initial position
+    public void setPosition(double x, double y) {
+        currentPosition = new Point2D.Double(x, y);
+    }
+
     public void startEngine() {
         currentSpeed = 0.1;
     }
