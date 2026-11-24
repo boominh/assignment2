@@ -50,4 +50,51 @@ public class CarController {
             car.gas(gas);
         }
     }
+
+    void brake(int amount) {
+       double brake = ((double) amount) / 100;
+        for (Car car : cars) {
+            car.brake(brake);
+        }
+    }
+
+    void turnLeft() {
+        for (Car car : cars) {
+            car.turnLeft();
+        }
+    }
+
+    void turnRight() {
+        for (Car car : cars) {
+            car.turnRight();
+        }
+    }
+
+    void turboOn() {
+        for (Car car : cars) {
+            if (car instanceof Saab95){
+                ((Saab95)car).setTurboOn();
+            }
+        }
+    }
+
+    void turboOff(){
+        for (Car car : cars) {
+            if (car instanceof Saab95){
+                ((Saab95)car).setTurboOff();
+            }
+        }
+    }
+
+    void startEngine(){
+        for (Car car : cars) {
+            car.startEngine();
+        }
+    }    
+
+    void stopEngine(){
+        for (Car car : cars) {
+            car.stopEngine();
+        }
+    }
 }
