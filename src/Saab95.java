@@ -30,4 +30,8 @@ public class Saab95 extends Car{
         return this.getEnginePower() * 0.01 * turbo;
     }
 
+    @Override
+    public String getImagePath() {
+        return "/pics/Saab95.jpg";
+    }
 }

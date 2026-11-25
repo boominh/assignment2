@@ -18,7 +18,7 @@ enum Direction{
 
     public Direction getLeftTurnDirection() {
         // ordinal() returns the position of the enum constant (UP = 0, RIGHT = 1, etc.)
-        int indexNewDir = (ordinal() - 1) % 4;
+        int indexNewDir = (ordinal() -1 + 4) % 4;
         return values()[indexNewDir];
     }
 

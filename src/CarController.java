@@ -17,9 +17,9 @@ public class CarController {
     private Timer timer = new Timer(delay, new TimerListener());
 
     // The frame that represents this instance View of the MVC pattern
-    CarView frame;
+    private CarView frame;
     
-    ArrayList<Car> cars = new ArrayList<>();
+    private ArrayList<Car> cars = new ArrayList<>();
 
     public void startTimer() {
         this.timer.start();
@@ -33,14 +33,25 @@ public class CarController {
             
             for (Car car : cars) {
                 car.move();
-                int x = (int) Math.round(car.getPosition().getX());
-                int y = (int) Math.round(car.getPosition().getY());
-                frame.drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.revalidate();
                 frame.drawPanel.repaint();
             }
              
+        }
+    }
+
+    void newFrame(String frameName, CarController cc) {
+        frame = new CarView(frameName, cc);
+        for (Car car : cars) {
+            frame.drawPanel.addDrawable(car);
+        }
+    }
+
+    void addCar(Car car){
+        cars.add(car);
+        if (frame != null){
+            frame.drawPanel.addDrawable(car);
         }
     }
 

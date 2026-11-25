@@ -18,4 +18,9 @@ public class Volvo240 extends Car{
     public double speedFactor() {
         return this.getEnginePower() * 0.01 * trimFactor;
     }
+
+    @Override 
+    public String getImagePath() {
+        return "/pics/Volvo240.jpg";
+    }
 }

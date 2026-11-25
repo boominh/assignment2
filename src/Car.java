@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.geom.Point2D;
 
-public abstract class Car implements Movable {
+public abstract class Car implements Movable, IPanelDrawable {
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
     private double currentSpeed; // The current speed of the car
@@ -105,4 +105,7 @@ public abstract class Car implements Movable {
         inputValue = Math.max(inputValue, min);
         return inputValue;
     }
+
+    // IPanelDrawable
+    public abstract String getImagePath();
 }
